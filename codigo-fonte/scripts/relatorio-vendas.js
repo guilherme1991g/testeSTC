@@ -1,5 +1,3 @@
-resposta()
-
 const url = "http://ap3.stc.srv.br/integration/prod/ws/vehicle/list"; // API URL
 const method = "POST"; // Request method, change for what's needed
 
@@ -36,23 +34,8 @@ fetch(url, {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 function resposta(resposta) {
-    var doc = new jsPDF( )
-    doc.text('oi',10,10)
-    doc.save('relatorio.pdf')
+console.log(resposta)
 }
 
 function getSga(placa) {
