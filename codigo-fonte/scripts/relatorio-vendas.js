@@ -29,7 +29,6 @@ fetch(url, {
 
 
 
-alert("tetfhdfhk,njkdhfgfghfffs")
 
 
 
