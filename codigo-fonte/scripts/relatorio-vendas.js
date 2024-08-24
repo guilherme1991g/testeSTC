@@ -1,12 +1,16 @@
-const url = "https://ap3.stc.srv.br/integration/prod/ws/vehicle/list"; // API URL
+const url = "http://ap3.stc.srv.br/integration/prod/ws/vehicle/list"; // API URL
 const method = "POST"; // Request method, change for what's needed
 
 const update = {
-    key: '7e0a6b6b42558761470d6269804fa428'
+    key: '7e0a6b6b42558761470d6269804fa428',
+    page: 1
 };
 
 fetch(url, {
     method,
+    headers: {
+        "Content-Type": "application/json"	 // This is the important part, the auth header
+    },
 
     body: JSON.stringify(update),
 
@@ -21,6 +25,7 @@ fetch(url, {
         for (i=5 ; i>0 ; i--){
 
         var placa = data.data.data[i].lisencePlate
+        console.log(placa)
         getSga(placa)
         }
     })
@@ -43,15 +48,9 @@ fetch(url, {
 
 
 function resposta(resposta) {
-    let tr = tabela.insertRow()
-    let tddata = tr.insertCell()
-    let tdvalor = tr.insertCell()
-    let tdproduto = tr.insertCell()
-    let tduser = tr.insertCell()
-
-
-    tddata.innerText = resposta
-
+    var doc = new jsPDF( )
+    doc.text('oi',10,10)
+    doc.save('relatorio.pdf')
 }
 
 function getSga(placa) {
