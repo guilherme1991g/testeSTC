@@ -1,4 +1,4 @@
-const url = "http://ap3.stc.srv.br/integration/prod/ws/vehicle/list"; // API URL
+const url = "https://ap3.stc.srv.br/integration/prod/ws/vehicle/list"; // API URL
 const method = "POST"; // Request method, change for what's needed
 
 const update = {
