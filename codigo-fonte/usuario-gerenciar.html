@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="UTF-8" ></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/users.css">
+  <script src="scripts/scripts.js" type="text/javascript"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="scripts/config.js" type="text/javascript"></script>
+
+
+  <title>Nexum - Usuários</title>
+</head>
+<body onload="statusonload()">
+    <header>
+      <nav>
+        </div>
+        <div class="side-bar active">
+          <div class="menu">
+            <div class="item"><a href="home.html"><i class="bi bi-house"></i>Home</a></div>
+            <div class="item"><a href="pdv.html"><i class="bi bi-basket2"></i>PDV</a></div>
+            <div class="item"><a href="estoque.html"><i class="bi bi-upc-scan"></i>Estoque</a></div>
+            <div class="item">
+              <a class="sub-btn"><i class="bi bi-cash"></i>Caixa<i class="bi bi-caret-right-fill dropdown"></i></a>
+              <div class="sub-menu">
+                <a href="caixa-lancamento.html" class="sub-item">Lançamentos</a>
+                <a href="caixa-fechamento.html" class="sub-item">Fechamento</a>
+              </div>
+            </div>
+            <div class="item">
+              <a class="sub-btn"><i class="bi bi-bar-chart-fill"></i>Relatório<i class="bi bi-caret-right-fill dropdown"></i></a>
+              <div class="sub-menu">
+                <a href="relatorio-financeiro.html" class="sub-item">Financeiro</a>
+                <a href="relatorio-vendas.html" class="sub-item">Vendas</a>
+                <a href="relatorio-comodato.html" class="sub-item">Comodato</a>
+              </div>
+            </div>
+            <div class="item"><a href="configuracao.html"><i class="bi bi-gear"></i>Configurações</a></div>
+            <div class="item">
+                <a class="sub-btn user"><i class="bi bi-person-circle"></i>Conta<i class="bi bi-caret-right-fill dropdown"></i></a>
+                <div class="sub-menu">
+                  <a class="sub-item">Gerenciar</a>
+                  <a class="sub-item" onclick="logout()">Sair</a>
+                </div>
+              </div>
+        </div>
+        </div>
+
+      </nav>
+    </header>
+    <div class="cabecalho">
+      <h1>Usuários</h1>
+      <div class="tagusuario">
+        <i class="bi bi-person-circle"></i>
+        <label><span id="tagusuario"></span></label>
+      </div>
+      <div class="tagsgp">
+        <label >Status SGP: <span id="statusconexao"></span></label>      
+      </div>
+    </div>
+    <div class="corpouser"> 
+      <form action="">
+        <fieldset class="fieldsetuser">
+          <legend><b>Cadastro de Usuários</b></legend>
+            <br>
+            <div class="inputBox-user">
+              <label for="email" class="labelInput-user">Email:</label>
+              <input type="email" name="email"  id="user" class="inputUser-user" required>
+            </div>
+            <br>
+            <div class="inputBox-user">
+              <label for="senha" class="labelInput-user">Senha:</label>
+              <input type="password" name="senha"  id="senha" class="inputUser-user" required>
+            </div>  
+            <br>
+            <div class="inputBox-user">
+              <label for="confsenha" class="labelInput-user">Confirmar Senha:</label>
+              <input type="password" name="confsenha"  id="confirmasenha" class="inputUser-user" required>
+            </div>      
+            <br><br><br><br>
+            <input type="button" onclick="validadorForm()" name="submit" value="Salvar " id="submit-user" class="botaosalvar">
+        </fieldset>
+    </form>
+    <div >
+      <fieldset class="fieldsetuser">
+        <legend><b>Usuários Cadastrados</b></legend>
+        <div class="tagusuario">
+          <i class="bi bi-person-circle"></i>
+          <label ><span id="tagusuario"></span></label>      
+        </div>
+        <table >
+          <thead>
+            <th>Usuário</th>
+            <th>Ação</th>
+          </thead>
+          <tbody id="tabela">
+
+          </tbody>
+
+        </table>
+      </fieldset>
+    </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore-compat.js"></script>
+    <script src="scripts/init-firebase.js"></script>
+    <script src="scripts/block.js" type="text/javascript"></script>
+    <script src="scripts/home.js" type="text/javascript"></script>
+    <script src="scripts/users.js" type="text/javascript"></script>
+</body>
+</html>

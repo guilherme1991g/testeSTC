@@ -1,0 +1,146 @@
+
+.boxpdv{
+    color: rgb(0, 0, 0);
+    display: flex;
+    top: 10px;
+    left: 10px;
+    padding: 10px;
+    border-radius: 15px;
+    width: 250px;
+    height: 100px;
+}
+.fieldsetpdv{
+    padding: 15px;
+}
+
+#botaoedit,
+#botaodelete{
+    color: cornflowerblue;
+    margin: 10px;
+    cursor: pointer;
+}
+
+
+
+.inputBox-pdv{
+    position: relative;
+        }
+.inputUser-pdv{
+    border-color: rgb(0, 0, 0);
+    background: none;
+    border-radius: 10px;
+    outline: none;
+    height: 35px;
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    width: 100%;
+    letter-spacing: 1px;    
+    ;}
+
+
+.labelInput-pdv{
+    
+    top: 0px;
+    left: 0px;
+    pointer-events: none;
+    transition: .5s;
+}
+
+#consultaCliente{
+    display: none;
+}
+
+#submit-pdv,
+#consultaCliente{
+    background-image: linear-gradient(to right,rgb(76, 145, 225), rgb(74, 65, 238));
+    width: 100%;
+    border: none;
+    padding: 15px;
+    margin-bottom: 20px;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+#submit-pdv:hover,
+#consultaCliente:hover,
+.botaofechavenda:hover{
+    
+    background-image: linear-gradient(to right,rgb(31, 115, 212), rgb(19, 42, 195));
+
+}
+
+#submit-pdv:active,
+#consultaCliente:active,
+.botaofechavenda:active{
+    font-size: 14px;
+    opacity: 0.5;
+
+}
+
+.divcorpo {
+
+    display: inline-block;
+}
+
+/*Tabela*/
+
+table,
+td,
+tr{
+    margin-top: 10px;
+    padding: 20px;
+    border-collapse: collapse;
+    position: static;
+    border: 1px solid white;
+    
+
+}
+
+.boxresultado{
+    display: inline;
+    padding: 5px;
+    font-size: 20px;
+    color: brown;
+    font-style:normal;
+}
+
+#cod,
+#qtd,
+#vunit,
+#vtotal,
+#acao{
+    column-width: 100px;
+}
+
+
+.colunavendas{
+    background-color: cornflowerblue;
+    color: white;
+}
+
+.boxbotaofechavenda{
+    position: static;
+    width: 100%;
+    height: 80px;
+    
+}
+
+.botaofechavenda{
+    margin-left: 50%;
+    margin-top: 40px;
+    left: 50%;
+    border: none;
+    transform: translate(-50%,-50%);
+    padding: 8px;
+    width: 190px;
+    height: 45px;
+    font-size: 15px;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    background-image: linear-gradient(to right,rgb(76, 145, 225), rgb(74, 65, 238));
+
+}
+
+
