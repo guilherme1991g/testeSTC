@@ -17,8 +17,7 @@ fetch(url, {
     return response.json();
 })
     .then((data) => {
-
-
+        alert("oi")
         var placa = data
         console.log(placa)
 
