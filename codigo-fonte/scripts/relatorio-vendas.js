@@ -7,13 +7,6 @@ fetch(url, {
     headers: {
         "Content-Type": "application/json"	 // This is the important part, the auth header
     },
-    body:{
-        
-            "email": "guilherme1991g@hotmail.com",
-            "password":"123456"
-        
-    }
-    ,
 
 
 }).then((response) => {
