@@ -12,59 +12,52 @@
   <script src="scripts/config.js" type="text/javascript"></script>
 
  
-  <title>Nexum - Home</title>
+  <title>Setta Premium</title>
 </head>
-<body onload="statusonload()">
+<body>
     <header>
-      <nav>
-        </div>
-        <div class="side-bar active">
-          <div class="menu">
-            <div class="item fila home"><a><i class="bi bi-house"></i>Home</a></div>
-            <div class="item"><a href="pdv.html"><i class="bi bi-basket2"></i>PDV</a></div>
-            <div class="item"><a href="estoque.html"><i class="bi bi-upc-scan"></i>Estoque</a></div>
-            <div class="item">
-              <a class="sub-btn"><i class="bi bi-cash"></i>Caixa<i class="bi bi-caret-right-fill dropdown"></i></a>
-              <div class="sub-menu">
-                <a href="caixa-lancamento.html" class="sub-item">Lançamentos</a>
-\                <a href="caixa-fechamento.html" class="sub-item">Fechamento</a>
-              </div>
-            </div>
-            <div class="item">
-              <a class="sub-btn"><i class="bi bi-bar-chart-fill"></i>Relatório<i class="bi bi-caret-right-fill dropdown"></i></a>
-              <div class="sub-menu">
-                <a href="relatorio-financeiro.html" class="sub-item">Financeiro</a>
-                <a href="relatorio-vendas.html" class="sub-item">Vendas</a>
-                <a href="relatorio-comodato.html" class="sub-item">Comodato</a>
-              </div>
-            </div>
-            <div class="item"><a href="configuracao.html"><i class="bi bi-gear"></i>Configurações</a></div>
-            <div class="item">
-                <a class="sub-btn"><i class="bi bi-person-circle"></i>Conta<i class="bi bi-caret-right-fill dropdown"></i></a>
-                <div class="sub-menu">
-                  <a href="usuario-gerenciar.html" class="sub-item">Gerenciar</a>
-                  <a class="sub-item" onclick="logout()">Sair</a>
-                </div>
-              </div>
-        </div>
-        </div>
 
-      </nav>
     </header>
     <div class="cabecalho">
-      <h1>Dashboard</h1>
-      <div class="tagusuario">
-        <i class="bi bi-person-circle"></i>
-        <label ><span id="tagusuario"></span></label>      
-      </div>
-      <div class="tagsgp">
-        <label >Status uSGP: <span id="statusconexao"></span></label>      
-      </div>
+      <h1>Cotações</h1>
     </div>
+
+<div class="teste">
+    <div class="cota2">
     <div class="corpo">
-
+      <h1>Plano Premium</h1>
+    </div>
+    <div class="cota" id="interno">
+      <h2>- Roubo, Furto</h2>
+      <h2>- Perca Total</h2>
+      <h2>- Reboque 100KM</h2>
+      <h2>- Rastreador acima de 30mil</h2>
+      <br><br><br><br><br><br>
+      <h2>- Investimento mensal: <span class="valor">R$ 249,00</span></h2>
 
     </div>
+    </div>
+
+
+
+  <div class="cota2">
+    <div class="corpo">
+      <h1>Plano Premium Mater</h1>
+    </div>
+    <div class="cota" id="interno">
+      <h2>- Roubo, Furto</h2>
+      <h2>- Colisao, Perca Total</h2>
+      <h2>- Incendio proveniente de colisao</h2>
+      <h2>- Fenomenos da natureza</h2>
+      <h2>- Vidros, lanternas e farois</h2>
+      <h2>- Terceiros ate 20mil</h2>
+      <h2>- Rastreador acima de 30mil</h2>
+      <br>
+      <h2>- Investimento mensal: <span class="valor">R$ 249,00</span></h2>
+
+    </div>
+  </div>
+</div>
     <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore-compat.js"></script>
@@ -72,7 +65,191 @@
     <script src="scripts/block.js" type="text/javascript"></script>
     <script src="scripts/home.js" type="text/javascript"></script>
 
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap');
 
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+.corpotable{
+    overflow-y: auto;
+    height: 400px;
+}
+
+body {
+    background-color:rgb(45, 45, 45);
+    min-height: 100vh;
+    overflow-y: hidden;
+    overflow-x: hidden;
+
+}
+
+.excluir{
+    cursor: pointer;
+}
+
+.side-bar{
+    width: 80px;
+    height: 100%;
+    padding: 0px 0 10px;
+    background-color:rgb(45, 45, 45);
+    box-shadow: 5px 0 0  cornflowerblue;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    overflow-y: auto;
+    transition: .3s;
+}
+
+.side-bar:hover{
+    width: 300px;
+}
+  
+.side-bar .menu{
+    width: 100%;
+}
+  
+.side-bar .menu .item{
+    position:relative;
+    cursor:pointer;
+  }
+  
+.side-bar .menu .item a{
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+    display:flex;
+    padding: 5px 30px;
+    line-height: 60px;
+}
+  
+.side-bar .menu .item a:hover{
+    background: cornflowerblue;
+    transition: 0.3s ease;
+  
+}
+  
+.side-bar .menu .item i{
+    margin-right: 50px;
+    font-size: 25px;
+}
+  
+.side-bar .menu .item a .dropdown{
+    position:absolute;
+    right: 80px;
+    font-size: 15px;
+    margin: 0px;
+    transition: .3s ease;
+
+}
+  
+.side-bar .menu .item .sub-menu{
+    background: rgba(255,255,255 , 0.1);
+    display:none;
+}
+  
+.side-bar .menu .item .sub-menu a{
+    padding-left: 80px;
+}
+  
+.rotate{
+    transform: rotate(90deg);
+}
+
+.side-bar .menu .item .caixa{
+background-color: cornflowerblue;
+}
+
+.side-bar .menu  .estoque{
+    background-color: cornflowerblue;
+}
+
+.side-bar .menu  .config{
+    background-color: cornflowerblue;
+}
+
+.side-bar .menu  .pdv{
+    background-color: cornflowerblue;
+}
+
+.side-bar .menu  .home{
+    background-color: cornflowerblue;
+}
+
+.side-bar .menu  .user{
+    background-color: cornflowerblue;
+}
+
+.side-bar .menu  .relatorio{
+    background-color: cornflowerblue;
+}
+
+.corpo{
+    margin-left: 20%;
+    transition: .4s;
+    width: 150%;
+    height:30px;
+    margin-top: 5px;
+    display: flex;    
+    background-color: cornflowerblue;
+}
+
+.cota{
+    margin-left: 20%;
+    transition: .4s;
+    width: 150%;
+    height:400px;
+    border-style:groove;
+    border-color: cornflowerblue;
+    padding: 20px 0px 0px 0px;
+    background-color:rgb(45, 45, 45);
+
+
+}
+.teste{
+    margin-left: 40%;
+    display: flex;
+
+    
+}
+.cota2{
+    margin-left: 25%;
+}
+
+.valor{
+    font-size: 30px;
+    color: rgb(2, 94, 14);
+    font-weight: bold;
+}
+.cabecalho{
+    margin-top:0%;
+    margin-bottom: 100px;
+    width: 100%;
+    position:static;
+    display: flex;
+    padding: 10px 10px 10px 10px;
+    background-color:rgb(45, 45, 45);
+    box-shadow: 0 5px 0  cornflowerblue;
+}
+h1 {
+    font-size: 20px;
+    margin-left: 50%;
+    color: #fff;
+    transform: translate(-50%);
+}
+h2 {
+    font-size: 20px;
+    margin-left: 20px;
+    color: #fff;
+    padding: 5px 5px 5px 5px;
+}
+
+</style>
 
 </body>
 </html>

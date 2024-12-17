@@ -13,34 +13,123 @@
 
 
 
-    <title>Nexum - Login</title>
+    <title>SETTA PREMIUM</title>
 </head>
 
 <body class="body-login">
     <div class="box">
         <form id="formlogin" >
             <fieldset>
-                <legend><b>Login</b></legend>
+                <legend><b>Consultar Placa</b></legend>
                 <br>
+                <br><br>
                 <div class="inputBox">
                     <input type="text" name="user" id="user" class="inputUser" required>
-                    <label for="user" class="labelInput">Usuário</label>
-                </div>
-                <br><br>
-                <div class="inputBox">
-                    <input type="password" name="senha" id="senha" class="inputUser" required>
-                    <label for="senha" class="labelInput">Senha</label>
+                    <label for="user" class="labelInput">Placa</label>
                 </div>
                 <br><br>
                 <br><br>
-                <input type="button" onclick="validadorForm()" name="submit" id="submit" value="Login">
+                <br><br>
+                <input type="button" onclick="consulta()" name="submit" id="submit" value="Consultar">
             </fieldset> 
         </form>
     </div>
+
+    <script >
+    function consulta(){
+
+
+    var placa = document.getElementById('user').value
+    window.location.href="http://177.221.128.50:1880/placa2?"+placa
+
+}
+    </script>
+
+    <style>
+
+.body-login{
+    background-image: linear-gradient(to right, rgb(185, 210, 224), rgb(82, 137, 238));
+}
+
+.box{
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    border-radius: 15px;
+    position: absolute;
+    width: 30%;
+    
+}
+
+fieldset{
+    border: 3px solid cornflowerblue;
+    padding: 15px;
+    text-align: center;
+
+}
+h1{
+    color: cornflowerblue
+}
+legend{
+    border: 1px solid cornflowerblue;
+    padding: 19px;
+    text-align: center;
+    background-color: cornflowerblue;
+    border-radius: 8px;
+}
+.inputBox{
+    position: relative;
+        }
+.inputUser{
+    background: none;
+    border: none;
+    border-bottom: 1px solid white;
+    outline: none;
+    color: white;
+    font-size: 15px;
+    width: 100%;
+    letter-spacing: 2px;
+}
+.labelInput{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    pointer-events: none;
+    transition: .5s;
+}
+.inputUser:focus ~ .labelInput,
+.inputUser:valid ~ .labelInput{
+    top: -20px;
+    font-size: 12px;
+    color: cornflowerblue;
+}
+
+#submit{
+    background-image: linear-gradient(to right,rgb(76, 145, 225), rgb(30, 20, 220));
+    width: 100%;
+    border: none;
+    padding: 15px;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+#submit:hover{
+    background-image: linear-gradient(to right,rgb(31, 115, 212), rgb(19, 42, 195));
+}
+
+    </style>
+    
     <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
-    <script src="scripts/init-firebase.js"></script>
+
     <script src="scripts/index.js"></script>
+
+
 
 </body>
 
